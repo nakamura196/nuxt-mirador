@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Mirador 3 Embedded Sample</title>
+
+    <style>
+      #mirador {
+        height: 600px;
+        position: relative;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mirador 3 Embedded Sample</h1>
+
+    <div id="mirador"></div>
+    <script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
+
+    <script>
+      const url =
+        'https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json'
+
+      const config = {
+        id: 'mirador',
+        windows: [
+          {
+            manifestId: url,
+          },
+        ],
+        window: {
+          allowClose: false,
+          allowMaximize: false,
+          allowFullscreen: true,
+          hideWindowTitle: true,
+        },
+        workspaceControlPanel: {
+          enabled: false,
+        },
+      }
+      Mirador.viewer(config)
+    </script>
+  </body>
+</html>
