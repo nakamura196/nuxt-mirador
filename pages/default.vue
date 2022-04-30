@@ -21,6 +21,7 @@ export default {
     }
     return config;
   },
+  },
   
   mounted() {
     this.mirador = Mirador.viewer(this.miradorViewerOptions, [...miradorImageToolsPlugin]);
