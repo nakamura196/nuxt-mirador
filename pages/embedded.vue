@@ -62,15 +62,9 @@ export default {
       canvas: ""
     }
   },
-  watch: {
-    canvas() {
-      // We create the action first. Note we are using a specified `windowId` here. This could be accessed from the store instead of specifying upfront.
-      const action = Mirador.actions.setCanvas('known-window-id', this.canvas)
-      // Now we can dispatch it.
-      miradorInstance.store.dispatch(action)
-    },
-  },
-  mounted() {
+  
+  computed: {
+    miradorViewerOptions() {
     const config = {
       id: "mirador",
       windows: [
@@ -89,8 +83,28 @@ export default {
         enabled: false,
       },
     }
-    miradorInstance = Mirador.viewer(config, [...miradorImageToolsPlugin])
+    return config;
   },
+  },
+  
+  watch: {
+    canvas() {
+      // We create the action first. Note we are using a specified `windowId` here. This could be accessed from the store instead of specifying upfront.
+      const action = Mirador.actions.setCanvas('known-window-id', this.canvas)
+      // Now we can dispatch it.
+      miradorInstance.store.dispatch(action)
+    },
+  },
+  
+  mounted() {
+   
+    miradorInstance = Mirador.viewer(this.miradorViewerOptions, [...miradorImageToolsPlugin]);
+  },
+  
+  beforeDestroy() {
+    miradorInstance.unmount()
+  },
+  
   methods:{
     zoom(){
       // Box to zoom to
