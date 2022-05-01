@@ -1,7 +1,7 @@
 {
   "name": "nuxt-app",
   "short_name": "nuxt-app",
-  "description": "This repository is designed to show integrating Mirador 3 with Nuxt.js.",
+  "description": "[![pages-build-deployment](https://github.com/nakamura196/nuxt-mirador/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/nakamura196/nuxt-mirador/actions/workflows/pages/pages-build-deployment)",
   "icons": [
     {
       "src": "/nuxt-mirador/_nuxt/icons/icon_64x64.e3e9fb.png",
