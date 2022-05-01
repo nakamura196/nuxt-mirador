@@ -18,10 +18,12 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.16.0",
-    "mirador": "^3.2.0",
+    "mirador": "^3.3.0",
     "mirador-image-tools": "^0.11.0",
     "nuxt": "^2.15.7",
     "push-dir": "^0.4.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "vuetify": "^2.5.8"
   },
   "devDependencies": {
